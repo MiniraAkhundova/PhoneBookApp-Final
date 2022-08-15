@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: phonebookapp
+  labels:
+    app: PhoneBookApp
+spec:
+  containers:
+    - name: phonebook
+      imagePullPolicy: IfNotPresent
+      image: alvanrahimli/phonebookapp

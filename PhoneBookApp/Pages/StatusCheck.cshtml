@@ -1,0 +1,23 @@
+﻿@page "/status"
+@model PhoneBookApp.Pages.StatusCheckModel
+@{
+}
+
+@if (Model.CanConnectToDb)
+{
+    <div class="alert alert-success d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+  <div>
+    DB connectin is OK
+  </div>
+</div>
+}
+else 
+{
+    <div class="alert alert-warning d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+  <div>
+    Could not connect to DB
+  </div>
+</div>
+}

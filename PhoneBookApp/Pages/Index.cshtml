@@ -1,0 +1,58 @@
+﻿@page
+@model PhoneBookApp.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    .btn a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    outline: none;
+    }
+</style>
+
+
+
+<h1>Index</h1>
+
+<p>
+   <button class="btn btn-primary btn-lg"> <a asp-page="Create">Create New</a></button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneBookItem[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneBookItem[0].PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneBookItem[0].AdditionDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PhoneBookItem) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdditionDate)
+            </td>
+            <td>
+                <button class="btn btn-warning"><a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> </button>|
+                <button class="btn btn-primary"> <a asp-page="./Details" asp-route-id="@item.Id">Details</a> </button>|
+                <button class="btn btn-danger"><a asp-page="./Delete" asp-route-id="@item.Id">Delete</a></button>  
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

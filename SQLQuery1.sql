@@ -1,0 +1,1 @@
+﻿insert into PhoneBookItems (Id, [Name], PhoneNumber, AdditionDate) values ('aa2477da-bf45-44cf-b688-a2cda5ffb161', 'Alvan', '+994517000543', '2022-08-06T01:00:00');

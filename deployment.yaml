@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phonebookapp
+  labels:
+    app: PhoneBookApp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: PhoneBookApp
+  template:
+    metadata:
+      labels:
+        app: PhoneBookApp
+    spec:
+      containers:
+        - name: phonebook
+          imagePullPolicy: IfNotPresent
+          image: alvanrahimli/phonebookapp
